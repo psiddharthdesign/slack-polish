@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node index.ts",
-    "dev": "ts-node --watch index.ts"
-  },
+"scripts": {
+  "start": "ts-node index.ts",
+  "dev": "nodemon --exec ts-node index.ts"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
