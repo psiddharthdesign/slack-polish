@@ -28,7 +28,7 @@ app.command('/polish', async ({ command, ack, respond }) => {
         messages: [{ role: 'user', content: raw }],
       });
 
-      const polished = result.content[0].type === 'text' ? result.content[0].text : '';
+      const polished = (result.content[0] as { type: string; text: string }).text ?? '';
       await respond({ response_type: 'ephemeral', text: `✦ *Polished:*\n${polished}` });
     } catch (e) {
       await respond({ response_type: 'ephemeral', text: 'Something went wrong, try again.' });
